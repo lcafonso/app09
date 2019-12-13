@@ -15,6 +15,7 @@ from LeftPanel import *
 from TopPanel import *
 from CenterPanel import *
 from RightPanel import *
+from BottonPanel import *
 
 __title__ = "TkWindow"
 __version__ = "1.0.0"
@@ -75,6 +76,7 @@ class TkWindow:
         self.topPanel = TopPanel(self.root, self.topFrame)
         self.centerPanel = CenterPanel(self.root, self.centerFrame)
         self.rightPanel = RightPanel(self.root, self.rightFrame)
+        self.bottomPanel = BottonPanel(self.root, self.bottonFrame)
 
     def start(self):
         self.root.mainloop()

@@ -25,19 +25,19 @@ class RightPanel:
 
 
 
-        self.img1 = Image.open("icons/off.png")
+        self.img1 = Image.open("icons/cogwheels.png").convert('RGBA')
         self.useImg1 = ImageTk.PhotoImage(self.img1)
-        self.img2 = Image.open('icons/off.png')
+        self.img2 = Image.open('icons/rubbish-bin.png').convert('RGBA')
         self.useImg2 = ImageTk.PhotoImage(self.img2)
-        self.img3 = Image.open('icons/off.png')
+        self.img3 = Image.open('icons/photo-of-a-landscape.png').convert('RGBA')
         self.useImg3 = ImageTk.PhotoImage(self.img3)
-        self.img4 = Image.open('icons/off.png')
+        self.img4 = Image.open('icons/emergency-exit.png').convert('RGBA')
         self.useImg4 = ImageTk.PhotoImage(self.img4)
 
         self.toolbar.columnconfigure(0, weight=1)
         self.toolbar.columnconfigure(1, weight=1)
-        self.toolbar.rowconfigure(0, weight=2)
-        self.toolbar.rowconfigure(1, weight=2)
+        self.toolbar.rowconfigure(0, weight=1)
+        self.toolbar.rowconfigure(1, weight=1)
 
         Button(self.toolbar, image=self.useImg1, width=64, height=64, command=self.callback1).grid(row=0, column=0, padx=4, pady=4, sticky=ALL)
         Button(self.toolbar, image=self.useImg2, width=64, height=64, command=self.callback2).grid(row=0, column=1, padx=4, pady=4, sticky=ALL)
