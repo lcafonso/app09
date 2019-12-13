@@ -30,8 +30,8 @@ class LeftPanel:
 
         self.path = os.path.dirname(__file__)
 
-        self.style = ttk.Style()
-        self.style.configure('Treeview', rowheight=40)
+        #self.style = ttk.Style()
+        #self.style.configure('Treeview', rowheight=40)
         self.tree =  CheckboxTreeview(self.frame)
 
         #self.tree.pack(expand=YES, fill=BOTH)

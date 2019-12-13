@@ -1,5 +1,7 @@
 from Tkinter import *
 from ttk import *
+import os, sys
+from PIL import ImageTk, Image
 
 class VerticalScrolledFrame(Frame):
     def __init__(self, parent, *args, **kw):
@@ -55,12 +57,20 @@ class SampleApp(Tk):
         def Print():
             print "print function"
 
-        button = Button(self.frame, text="Compare",command = Print)
-        button.pack(side=LEFT)
+        #button = Button(self.frame, text="Compare",command = Print)
+        #button.pack(side=LEFT)
+        image_list = []
+        image_list = next(os.walk('thumbs'))[2]
+
+        size = 64, 64
         buttons = []
-        for i in range(10):
-            buttons.append(Button(self.frame.interior, text="Button " + str(i)))
-            buttons[-1].pack()
+        for i in image_list:
+            idx = image_list.index(i)
+            img1 = Image.open('thumbs/' + i).convert('RGBA')
+            img1.thumbnail(size, Image.ANTIALIAS)
+            useImg1 = ImageTk.PhotoImage(img1)
+            buttons.append(Button(self.frame, image=useImg1))
+            buttons[idx].pack()
 
 
 
